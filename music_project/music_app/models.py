@@ -2,6 +2,11 @@ from django.db import models
 from django.urls import reverse
 
 
+class Album(models.Model):
+    title = models.CharField(max_length=40)
+    release_date = models.DateField()
+
+
 class Band(models.Model):
     GENRES = [
         ('NO GENRE', 'No genre'),
@@ -24,4 +29,3 @@ class Band(models.Model):
 
     def __str__(self):
         return f'{self.band_name} {self.genre} {self.founded}'
-
