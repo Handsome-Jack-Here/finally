@@ -5,6 +5,7 @@ from django.urls import reverse
 class Band(models.Model):
     GENRES = [
         ('NO GENRE', 'No genre'),
+        ('INDUSTRIAL', 'Industrial'),
         ('ROCK', 'Rock'),
         ('JAZZ', 'Jazz'),
         ('ELECTRONIC', 'Electronic'),
