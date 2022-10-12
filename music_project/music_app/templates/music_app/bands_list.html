@@ -1,0 +1,10 @@
+{% extends 'music_app/base.html' %}
+
+{% block title %} All bands {% endblock %}
+
+
+{% block content %}
+  {% for band in bands %}
+    <a href="{{ band.get_url }}">{{ band }}</a>
+  {% endfor %}
+{% endblock %}

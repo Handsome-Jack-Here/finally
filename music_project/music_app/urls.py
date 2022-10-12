@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('group', views.GetAllBands.as_view()),
-
+    path('', views.BandsList.as_view()),
+    path('band/<slug:slug>/', views.BandDetail.as_view(), name='get-band-detail'),
 ]

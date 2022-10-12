@@ -2,10 +2,14 @@ from django.db import models
 from django.urls import reverse
 
 
-class Album(models.Model):
-    title = models.CharField(max_length=40)
-    release_date = models.DateField()
-
+# class Track(models.Model):
+#     title = models.CharField(max_length=40)
+#     length = models.FloatField(default=1.00)
+#     slug = models.SlugField(blank=True)
+#
+#     def __str__(self):
+#         return f'{self.title}'
+#
 
 class Band(models.Model):
     GENRES = [
@@ -29,4 +33,18 @@ class Band(models.Model):
     slug = models.SlugField(blank=True)
 
     def __str__(self):
-        return f'{self.band_name} {self.genre} {self.founded}'
+        return f'{self.band_name}'
+
+    def get_url(self):
+        return reverse('get-band-detail', args=[self.slug, ])
+
+
+class Album(models.Model):
+    title = models.CharField(max_length=40)
+    release_date = models.DateField()
+    slug = models.SlugField(blank=True)
+
+    band = models.ForeignKey(Band, on_delete=models.PROTECT, null=True, related_name='albums')
+
+    def __str__(self):
+        return f'{self.title}'
