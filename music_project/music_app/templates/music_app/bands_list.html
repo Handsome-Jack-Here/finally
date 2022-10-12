@@ -4,7 +4,9 @@
 
 
 {% block content %}
+  <h2>List of bands</h2>
+<hr>
   {% for band in bands %}
-    <a href="{{ band.get_url }}">{{ band }}</a>
+    <a href="{{ band.get_url }}"><ul>{{ band }}</ul></a>
   {% endfor %}
 {% endblock %}

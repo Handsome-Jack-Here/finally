@@ -1,0 +1,13 @@
+{% extends 'music_app/base.html' %}
+
+
+{% block title %} Album details {% endblock %}
+
+{% block content %}
+<h2>{{ album.band }}</h2>
+<h2>{{ album }}</h2>
+<h2>Track list:</h2>
+    {% for track in album.tracks.all %}
+        <ul><a href="{{ track.get_url }}">{{ track }}</a></ul>
+    {% endfor %}
+{% endblock %}

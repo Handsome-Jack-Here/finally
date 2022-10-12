@@ -1,13 +1,13 @@
 {% extends 'music_app/base.html' %}
 
-{% block title %} Band detail {% endblock %}
+{% block title %} Band details {% endblock %}
 
 {% block content %}
     {{ band }}
 <hr>
 Albums:
 {% for album in band.albums.all %}
-    <h5>{{ album }}</h5>
+    <ul><a href="{{ album.get_url }}">{{ album }}</a></ul>
 {% endfor %}
 <hr>
 {% endblock %}
