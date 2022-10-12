@@ -21,6 +21,7 @@ class Band(models.Model):
     founded = models.IntegerField(blank=False)
     genre = models.CharField(choices=GENRES, blank=False, default='No genre', max_length=14)
     country = models.CharField(max_length=40, blank=True)
+    description = models.TextField(max_length=2500, default='No description')
     slug = models.SlugField(blank=True)
 
     def __str__(self):

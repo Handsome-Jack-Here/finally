@@ -1,6 +1,6 @@
 {% extends 'music_app/base.html' %}
 
-{% block title %} Track details {% endblock %}
+{% block title %} Track "{{ track }} " of {{ track.album.band }} {% endblock %}
 
 {% block content %}
 <h5>{{ track }}</h5>
