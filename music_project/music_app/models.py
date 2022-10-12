@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MinValueValidator, MinLengthValidator, MaxValueValidator
 
 
 class Band(models.Model):
@@ -57,3 +58,11 @@ class Track(models.Model):
 
     def get_url(self):
         return reverse('get-track-detail', args=[self.slug, ])
+
+
+class CommentDB(models.Model):
+    name = models.CharField(max_length=40, validators=[MinLengthValidator(2)])
+    surname = models.CharField(max_length=40, validators=[MinLengthValidator(2)])
+    comment = models.TextField(max_length=1500, validators=[MinLengthValidator(10)])
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+
