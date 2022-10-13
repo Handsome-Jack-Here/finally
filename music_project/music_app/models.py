@@ -39,6 +39,8 @@ class Album(models.Model):
 
     band = models.ForeignKey(Band, on_delete=models.PROTECT, null=True, related_name='albums')
 
+    # comments = models.ManyToManyField(CommentDB, related_name='albums')
+
     def __str__(self):
         return f'{self.title}'
 
@@ -66,3 +68,7 @@ class CommentDB(models.Model):
     comment = models.TextField(max_length=1500, validators=[MinLengthValidator(10)])
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
 
+    album = models.ManyToManyField(Album, related_name='comments')
+
+    def __str__(self):
+        return f'{self.name} {self.surname} {self.comment}'

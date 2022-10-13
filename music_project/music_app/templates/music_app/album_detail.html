@@ -10,4 +10,12 @@
     {% for track in album.tracks.all %}
         <ul><a href="{{ track.get_url }}">{{ track }}</a></ul>
     {% endfor %}
+<hr>
+<br>
+    {% for comment in album.comments.all %}
+        {{ comment }}
+    {% endfor %}
+<hr>
+<br>
+<a href="/comment_form/">Comment</a>
 {% endblock %}
