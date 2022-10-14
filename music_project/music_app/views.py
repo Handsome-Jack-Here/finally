@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, TemplateView, FormView, CreateView
+from django.views import View
 from .models import Band, Album, Track, CommentDB
 from .forms import CommentAbout
 
@@ -28,8 +30,7 @@ class TrackDetail(DetailView):
     context_object_name = 'track'
 
 
-class AlbumCommentForm(CreateView):
-
+class AlbumCommentForm(FormView):
     def get_context_data(self, **kwargs):
         context = super(AlbumCommentForm, self).get_context_data(**kwargs)
         print(self.kwargs['slug'])
@@ -42,7 +43,7 @@ class AlbumCommentForm(CreateView):
     context_object_name = 'form'
     success_url = '/'
 
-    # make a routh for success contain write function form to Album.x.comments
+# make a routh for success contain write function form to Album.x.comments
 
 # class FeedbackViewUpdate(View):
 #     def get(self, request, id_feedback):
