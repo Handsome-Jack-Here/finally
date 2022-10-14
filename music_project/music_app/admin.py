@@ -10,9 +10,8 @@ class BandAdmin(admin.ModelAdmin):
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ['title', 'release_date', 'band', 'comments']
+    list_display = ['title', 'release_date', 'band']
     prepopulated_fields = {'slug': ('title',)}
-    filter_horizontal = ['comments']
 
 
 @admin.register(Track)
@@ -24,4 +23,3 @@ class TrackAdmin(admin.ModelAdmin):
 @admin.register(CommentDB)
 class CommentAdmin(admin.ModelAdmin):
     list_filter = ['name', 'surname', 'comment', 'rating']
-    filter_horizontal = ['album']

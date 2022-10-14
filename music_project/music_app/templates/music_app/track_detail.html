@@ -3,5 +3,9 @@
 {% block title %} Track "{{ track }} " of {{ track.album.band }} {% endblock %}
 
 {% block content %}
-<h5>{{ track }}</h5>
+<h5><a href="{{track.album.band.get_url}}">{{track.album.band}}</a></h5>
+<h5><a href="{{track.album.get_url}}">{{track.album}}</a></h5>
+
+<hr><br>
+<h3>{{ track }}</h3>
 {% endblock %}

@@ -4,7 +4,7 @@
 {% block title %} Album "{{ album }}" of {{ album.band }}{% endblock %}
 
 {% block content %}
-<h2>{{ album.band }}</h2>
+<h2><a href="{{ album.band.get_url }}">{{ album.band }}</a></h2>
  <h3>Album: {{ album }}</h3>
 <h2>Track list:</h2>
     {% for track in album.tracks.all %}
@@ -17,5 +17,6 @@
     {% endfor %}
 <hr>
 <br>
-<a href="/comment_form/">Comment</a>
+<a href="{{ album.get_form }}">Comment</a>
+
 {% endblock %}
