@@ -47,7 +47,7 @@ class Album(models.Model):
         return reverse('get-album-detail', args=[slugify(self.band), self.slug])
 
     def get_form(self):
-        return reverse('make-a-comment', args=[self.slug, ])
+        return reverse('make-a-comment', args=[self.slug, self.pk])
 
 
 class Track(models.Model):
@@ -64,7 +64,6 @@ class Track(models.Model):
         # album = self.album
         album = Album.objects.get(title=self.album)
         band = album.band
-        print(slugify(band))
         return reverse('get-track-detail', args=[slugify(band), slugify(album), self.slug, ])
 
 
@@ -74,7 +73,7 @@ class CommentDB(models.Model):
     comment = models.TextField(max_length=1500, validators=[MinLengthValidator(10)])
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
 
-    album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True, related_name='comments')
+    album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True, related_name='comments',)
 
     def __str__(self):
         return f'{self.name} {self.surname} {self.comment}'

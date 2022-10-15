@@ -3,17 +3,20 @@
 {% block title %} Comment form {% endblock %}
 
 {% block content %}
-<form method="post">
+<form method="post" >
   {% csrf_token %}
+  <hr><br>
+    <input type="hidden"  name="album" value="{{ default }}">
+    Name: {{ form.name }}
+    Surname: {{ form.surname }}
+    Comments: {{ form.comment }}
+    Rating: {{ form.rating }}
+    <hr><br>
+    <button type="submit" > Send </button>
 
-  {% for field in form %}
-    {{ field.label_tag }}
-    {{ field }}
-  {% endfor %}
-  <hr>
-  <br>
-  <br><br>
-    <button type="submit"> Send </button>
+
+
+
 </form>
 
 {% endblock %}
