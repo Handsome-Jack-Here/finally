@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, TemplateView, FormView, CreateView
 from django.views import View
-from .models import Band, Album, Track, CommentDB
+from .models import Band, Album, Track, CommentDB, Genre
 from .forms import CommentAbout
 
 
@@ -43,3 +43,13 @@ class AlbumCommentForm(CreateView):
     success_url = '/'
 
 
+class GenresList(ListView):
+    model = Genre
+    template_name = 'music_app/genres_list.html'
+    context_object_name = 'genres'
+
+
+class GenreDetail(DetailView):
+    model = Genre
+    template_name = 'music_app/genre_detail.html'
+    context_object_name = 'genre'

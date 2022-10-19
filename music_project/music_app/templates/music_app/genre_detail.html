@@ -1,0 +1,14 @@
+{% extends 'music_app/base.html' %}
+
+{% block title %} Detail about {{ genre }} {% endblock%}
+
+{% block content %}
+<p>{{ genre }}</p>
+<hr>
+all bands of {{ genre }} genre:
+<br>
+{% for band in genre.bands.all %}
+<p> <a href="{{ band.get_url }}">{{ band }}</a> </p>
+{% endfor %}
+
+{% endblock %}

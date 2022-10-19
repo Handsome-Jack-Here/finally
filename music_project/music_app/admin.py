@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Band, Album, Track, CommentDB
+from .models import Band, Album, Track, CommentDB, Genre
 
 
 @admin.register(Band)
 class BandAdmin(admin.ModelAdmin):
-    list_display = ['band_name', 'founded', 'genre', 'description', 'slug']
+    list_display = ['band_name', 'founded', 'description', 'slug', ]
     prepopulated_fields = {'slug': ('band_name',)}
 
 
@@ -22,4 +22,11 @@ class TrackAdmin(admin.ModelAdmin):
 
 @admin.register(CommentDB)
 class CommentAdmin(admin.ModelAdmin):
-    list_filter = ['name', 'surname', 'comment', 'rating']
+    list_filter = ['name', 'surname', 'comment', 'rating', ]
+
+
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    list_filter = ['title', ]
+    prepopulated_fields = {'slug':('title', )}
+

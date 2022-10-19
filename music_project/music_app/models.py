@@ -4,6 +4,17 @@ from django.core.validators import MinValueValidator, MinLengthValidator, MaxVal
 from django.utils.text import slugify
 
 
+class Genre(models.Model):
+    title = models.CharField(max_length=38)
+    slug = models.SlugField(blank=True)
+
+    def __str__(self):
+        return f'{self.title}'
+
+    def get_url(self):
+        return reverse('get-genre', args=[self.slug, ])
+
+
 class Band(models.Model):
     GENRES = [
         ('NO GENRE', 'No genre'),
@@ -21,10 +32,11 @@ class Band(models.Model):
 
     band_name = models.CharField(max_length=40, blank=False)
     founded = models.IntegerField(blank=False)
-    genre = models.CharField(choices=GENRES, blank=False, default='No genre', max_length=14)
     country = models.CharField(max_length=40, blank=True)
     description = models.TextField(max_length=2500, default='No description')
     slug = models.SlugField(blank=True)
+
+    genres = models.ManyToManyField(Genre, related_name='bands')
 
     def __str__(self):
         return f'{self.band_name}'
@@ -73,9 +85,7 @@ class CommentDB(models.Model):
     comment = models.TextField(max_length=1500, validators=[MinLengthValidator(10)])
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
 
-    album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True, related_name='comments',)
+    album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True, related_name='comments', )
 
     def __str__(self):
         return f'{self.name} {self.surname} {self.comment}'
-
-
