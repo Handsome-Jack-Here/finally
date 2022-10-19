@@ -50,6 +50,7 @@ class Album(models.Model):
     release_date = models.DateField()
     slug = models.SlugField(blank=True)
 
+    genre
     band = models.ForeignKey(Band, on_delete=models.PROTECT, null=True, related_name='albums')
 
     def __str__(self):
