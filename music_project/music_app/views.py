@@ -9,6 +9,12 @@ from .forms import CommentAbout
 class BandsList(ListView):
     template_name = 'music_app/bands_list.html'
     model = Band
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['genres'] = Genre.objects.all()
+        return context
+
     context_object_name = 'bands'
 
 

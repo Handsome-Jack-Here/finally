@@ -6,6 +6,7 @@
 {% block content %}
 <h2><a href="{{ album.band.get_url }}">{{ album.band }}</a></h2>
 <h3>Album: {{ album }}</h3>
+
 <h2>Track list:</h2>
     {% for track in album.tracks.all %}
         <ul><a href="{{ track.get_url }}">{{ track }}</a></ul>
@@ -17,8 +18,8 @@
     {% endfor %}
 <hr>
 <br>
-<a href="{{ album.get_form }}">Comment</a>
 
+<a href="{{ album.get_form }}">Comment</a>
 
 
 {% endblock %}

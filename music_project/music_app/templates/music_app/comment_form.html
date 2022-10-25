@@ -6,7 +6,7 @@
 <form method="post" >
   {% csrf_token %}
   <hr><br>
-    <input type="hidden"  name="album" value="{{ default }}">
+    <input hidden  name="album" value="{{ default }}">
     Name: {{ form.name }}
     Surname: {{ form.surname }}
     Comments: {{ form.comment }}

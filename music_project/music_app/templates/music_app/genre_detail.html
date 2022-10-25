@@ -8,7 +8,7 @@
 all bands of {{ genre }} genre:
 <br>
 {% for band in genre.bands.all %}
-<p> <a href="{{ band.get_url }}">{{ band }}</a> </p>
+    <div><p><a href="{{ band.get_url }}">{{ band }}</a></p></div>
 {% endfor %}
 
 {% endblock %}
