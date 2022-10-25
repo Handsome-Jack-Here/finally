@@ -4,16 +4,28 @@
 
 {% block content %}
 
-<div class="header"><h1>List of bands</h1></div>
-<hr>
+<header>
+  <h1 class="h1_header" align="center">List of bands</h1>
+</header> <hr>
 
+  <div class="content">
   {% for band in bands %}
-    <a href="{{ band.get_url }}"><ul>{{ band }}</ul></a>
+    <a style="text-decoration: none" href="{{ band.get_url }}"><ul class="ul_list">{{ band }}</ul></a>
   {% endfor %}
 
-{% for genre in genres %}
-  <h4 align="right"><a href="{{ genre.get_url }}">{{ genre }}</a></h4>
-{% endfor %}
+  </div>
 
-<a  href="/genres"><p align="right">Genres list<p></a>
+
+<aside  >{% for genre in genres%}
+  <a style="text-decoration: none" href="{{ genre.get_url }}"><ul class="ul_aside">{{ genre|capfirst }}</ul></a>
+  {% endfor %}
+</aside>
+
+
+
+<footer>
+  <hr>
+  <a href="/"> Home </a><br><br>
+  <a style="text-decoration: none" href="/genres"><p align="left">Genres list<p></a>
+</footer>
 {% endblock %}

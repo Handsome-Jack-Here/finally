@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, TemplateView, FormView, C
 from django.views import View
 from .models import Band, Album, Track, CommentDB, Genre
 from .forms import CommentAbout
+from random import sample
 
 
 class BandsList(ListView):
@@ -12,7 +13,12 @@ class BandsList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['genres'] = Genre.objects.all()
+        # context['genres'] = Genre.objects.all()
+        random = []
+        for i in Genre.objects.all():
+            random.append(i)
+        random = sample(random, 14)
+        context['genres'] = random
         return context
 
     context_object_name = 'bands'

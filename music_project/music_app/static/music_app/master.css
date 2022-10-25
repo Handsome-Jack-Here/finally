@@ -1,9 +1,54 @@
-p {
-  color: gray;
+.wrap {
+
+  width: 1140px;
+  margin: auto;
 
 }
 
-.header {
-  background: gray;
+.h1_header {
+  padding: 40px 40px 40px 40px;
+  color: white;
+}
 
+header {
+  background-blend-mode: darken;
+  adding: 1px 10px 10px 10px;
+  height: 140px;
+  background: #4f6178;
+  font-family: Ubuntu;
+
+}
+
+.content {
+  background: #ffebcd;
+  width: 78%;
+  float: left;
+  clear: both;
+}
+
+.ul_list {
+  font-family: Ubuntu;
+  font-size: large;
+  color: black;
+}
+
+.ul_aside {
+  font-family: Ubuntu;
+  font-size: large;
+  color: black;
+  clear: both;
+}
+
+aside {
+  background: #b1a4a2;
+  padding: 1px 10px 10px 10px;
+  width: 18%;
+  height: 550px;
+  float: right;
+}
+
+footer {
+  height: 100px;
+  background: #31d2f2;
+  clear: both;
 }
