@@ -2,13 +2,18 @@
 
 {% block title %} All bands {% endblock %}
 
-
 {% block content %}
-  <h2>List of bands</h2>
+
+<div class="header"><h1>List of bands</h1></div>
 <hr>
+
   {% for band in bands %}
     <a href="{{ band.get_url }}"><ul>{{ band }}</ul></a>
   {% endfor %}
 
-<a href="/genres">Genres list</a>
+{% for genre in genres %}
+  <h4 align="right"><a href="{{ genre.get_url }}">{{ genre }}</a></h4>
+{% endfor %}
+
+<a  href="/genres"><p align="right">Genres list<p></a>
 {% endblock %}

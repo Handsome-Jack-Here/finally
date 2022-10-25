@@ -16,19 +16,6 @@ class Genre(models.Model):
 
 
 class Band(models.Model):
-    GENRES = [
-        ('NO GENRE', 'No genre'),
-        ('INDUSTRIAL', 'Industrial'),
-        ('ROCK', 'Rock'),
-        ('JAZZ', 'Jazz'),
-        ('ELECTRONIC', 'Electronic'),
-        ('DISCO', 'Disco'),
-        ('R&B', 'Rhythm and Blues'),
-        ('COUNTRY', 'Country'),
-        ('POP', 'Pop'),
-        ('NEW AGE', 'New age'),
-        ('METAL', 'Metal')
-    ]
 
     band_name = models.CharField(max_length=40, blank=False)
     founded = models.IntegerField(blank=False)
@@ -50,7 +37,7 @@ class Album(models.Model):
     release_date = models.DateField()
     slug = models.SlugField(blank=True)
 
-    genre
+    genres = models.ManyToManyField(Genre, related_name='albums')
     band = models.ForeignKey(Band, on_delete=models.PROTECT, null=True, related_name='albums')
 
     def __str__(self):
@@ -68,6 +55,7 @@ class Track(models.Model):
     length = models.FloatField(default=1.00)
     slug = models.SlugField(blank=True)
 
+    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name='tracks', null=True)
     album = models.ForeignKey(Album, on_delete=models.PROTECT, related_name='tracks')
 
     def __str__(self):
