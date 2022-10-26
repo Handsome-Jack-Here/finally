@@ -41,6 +41,13 @@ class TrackDetail(DetailView):
     model = Track
     context_object_name = 'track'
 
+    def get_context_data(self, **kwargs):
+        context = super(TrackDetail, self).get_context_data(**kwargs)
+        length = Track.objects.get(slug=self.kwargs['slug'])
+        str_length = str(length.length)
+        context['length'] = (str_length[0] + ':' + str_length[2:])
+        return context
+
 
 class AlbumCommentForm(CreateView):
     def get_context_data(self, **kwargs):
