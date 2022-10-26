@@ -10,7 +10,7 @@ class BandAdmin(admin.ModelAdmin):
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ['title', 'release_date', 'band',]
+    list_display = ['title', 'release_date', 'band', ]
     prepopulated_fields = {'slug': ('title',)}
 
 

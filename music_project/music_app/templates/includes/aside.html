@@ -1,0 +1,4 @@
+<aside  >{% for genre in genres%}
+  <a style="text-decoration: none" href="{{ genre.get_url }}"><ul class="ul_aside">{{ genre|capfirst }}</ul></a>
+  {% endfor %}
+</aside>

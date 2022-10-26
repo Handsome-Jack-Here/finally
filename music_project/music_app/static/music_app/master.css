@@ -22,6 +22,7 @@ header {
 .content {
   background: #ffebcd;
   width: 78%;
+  height: 100%;
   float: left;
   clear: both;
 }
@@ -48,7 +49,16 @@ aside {
 }
 
 footer {
-  height: 100px;
-  background: #31d2f2;
+  height: 130px;
+  background: #4f6178;
   clear: both;
+}
+
+.nav_bar {
+  padding: 3px 0px 40px 40px;
+}
+
+.navbar_link {
+  color: white;
+
 }

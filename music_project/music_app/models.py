@@ -22,6 +22,7 @@ class Band(models.Model):
     country = models.CharField(max_length=40, blank=True)
     description = models.TextField(max_length=2500, default='No description')
     slug = models.SlugField(blank=True)
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], default=5)
 
     genres = models.ManyToManyField(Genre, related_name='bands')
 
@@ -36,6 +37,7 @@ class Album(models.Model):
     title = models.CharField(max_length=40)
     release_date = models.DateField()
     slug = models.SlugField(blank=True)
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], default=5)
 
     genres = models.ManyToManyField(Genre, related_name='albums')
     band = models.ForeignKey(Band, on_delete=models.PROTECT, null=True, related_name='albums')
@@ -54,6 +56,7 @@ class Track(models.Model):
     title = models.CharField(max_length=40)
     length = models.FloatField(default=1.00)
     slug = models.SlugField(blank=True)
+    single = models.BooleanField(default=False)
 
     genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name='tracks', null=True)
     album = models.ForeignKey(Album, on_delete=models.PROTECT, related_name='tracks')

@@ -3,13 +3,18 @@
 {% block title %} Band details {% endblock %}
 
 {% block content %}
-<h1>{{ band }}</h1>
-<hr>
-<h5>{{ band.description }}</h5>
-<hr>
+{% include 'includes/header.html' %}
+
+{% include 'includes/detail_content.html' %}
+
 Albums:
 {% for album in band.albums.all %}
     <ul><a href="{{ album.get_url }}">{{ album }}</a></ul>
 {% endfor %}
+
+
+
+{% include 'includes/footer.html' %}
+
 
 {% endblock %}
