@@ -13,7 +13,7 @@
 header {
   background-blend-mode: darken;
   adding: 1px 10px 10px 10px;
-  height: 140px;
+  height: 120px;
   background: #4f6178;
   font-family: Ubuntu;
 
@@ -21,7 +21,8 @@ header {
 
 .content {
   background: #ffebcd;
-  width: 78%;
+  width: 75%;
+  padding: 20px 20px 20px 20px;
   height: 100%;
   float: left;
   clear: both;
@@ -43,13 +44,13 @@ header {
 aside {
   background: #b1a4a2;
   padding: 1px 10px 10px 10px;
-  width: 18%;
-  height: 550px;
+  width: 15%;
+  height: 100%;
   float: right;
 }
 
 footer {
-  height: 130px;
+  height: 140px;
   background: #4f6178;
   clear: both;
 }

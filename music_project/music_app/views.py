@@ -18,6 +18,7 @@ class BandsList(ListView):
         for i in Genre.objects.all():
             random.append(i)
         random = sample(random, 14)
+        random = sorted(random, key=lambda random: random.title.lower())
         context['genres'] = random
         return context
 

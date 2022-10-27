@@ -16,8 +16,8 @@ class AlbumAdmin(admin.ModelAdmin):
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ['title', ]
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = ['title', 'single', ]
+    prepopulated_fields = {'slug': ('title', )}
 
 
 @admin.register(CommentDB)
