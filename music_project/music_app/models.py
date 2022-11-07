@@ -16,7 +16,7 @@ class Genre(models.Model):
 
 
 class Band(models.Model):
-
+    image = models.FileField(upload_to='img', blank=True)
     band_name = models.CharField(max_length=40, blank=False)
     founded = models.IntegerField(blank=False)
     country = models.CharField(max_length=40, blank=True)

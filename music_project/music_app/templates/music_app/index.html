@@ -6,25 +6,29 @@
 
 <header>
   <h1 class="h1_header" align="center">List of bands</h1>
-</header> <hr>
+</header>
 
   <div class="content">
+    <div class="left">
   {% for band in bands %}
     <a style="text-decoration: none" href="{{ band.get_url }}"><ul class="ul_list">{{ band }}</ul></a>
   {% endfor %}
+      </div>
 
+
+    <div class="right">
+      <p>Empty field</p>
+    </div>
   </div>
 
 
-<aside  >{% for genre in genres%}
+<aside>
+  {% for genre in genres%}
   <a style="text-decoration: none" href="{{ genre.get_url }}"><ul class="ul_aside">{{ genre|capfirst }}</ul></a>
   {% endfor %}
 </aside>
 
-
-
-<footer>
+<div class="footer">
   {% include 'includes/navbar.html' %}
-  <a style="text-decoration: none" href="/genres"><p align="left">Genres list<p></a>
-</footer>
-{% endblock %}
+</div>
+  {% endblock %}

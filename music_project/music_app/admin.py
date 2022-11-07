@@ -4,7 +4,7 @@ from .models import Band, Album, Track, CommentDB, Genre
 
 @admin.register(Band)
 class BandAdmin(admin.ModelAdmin):
-    list_display = ['band_name', 'founded', 'description', 'slug', ]
+    list_display = ['band_name', 'founded', 'description', 'slug', 'image', ]
     prepopulated_fields = {'slug': ('band_name',)}
 
 

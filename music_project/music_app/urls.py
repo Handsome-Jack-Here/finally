@@ -1,5 +1,7 @@
+from django.conf.urls import static
 from django.urls import path
 from . import views
+from music_project import settings
 
 urlpatterns = [
     path('', views.BandsList.as_view()),
