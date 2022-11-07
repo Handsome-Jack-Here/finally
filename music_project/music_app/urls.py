@@ -14,3 +14,4 @@ urlpatterns = [
     path('<str:band>/<str:album>/<slug:slug>/', views.TrackDetail.as_view(), name='get-track-detail'),
     path('comment_for/<slug:slug>/<int:pk>', views.AlbumCommentForm.as_view(), name='make-a-comment'),
 ]
+

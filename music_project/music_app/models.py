@@ -29,6 +29,7 @@ class Band(models.Model):
     def __str__(self):
         return f'{self.band_name}'
 
+
     def get_url(self):
         return reverse('get-band-detail', args=[self.slug, ])
 

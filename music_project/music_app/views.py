@@ -7,6 +7,7 @@ from .forms import CommentAbout
 from random import sample
 
 
+
 class BandsList(ListView):
     template_name = 'music_app/index.html'
     model = Band

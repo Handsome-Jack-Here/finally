@@ -17,7 +17,7 @@ class AlbumAdmin(admin.ModelAdmin):
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
     list_display = ['title', 'single', ]
-    prepopulated_fields = {'slug': ('title', )}
+    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(CommentDB)
@@ -28,5 +28,4 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
     list_filter = ['title', ]
-    prepopulated_fields = {'slug':('title', )}
-
+    prepopulated_fields = {'slug': ('title',)}

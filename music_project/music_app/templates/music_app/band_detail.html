@@ -6,23 +6,21 @@
 {% include 'includes/header.html' %}
 
 
-
-
 <div class="band_content">
 
     <div class="left_band_detail">
         <p class="band_description">{{ band.description }}</p>
         {% if band.image %}
-            <img src="{{ band.image.url }}" alt="" class="band_image">
+        <img src="{{ band.image.url }}" alt="" class="band_image">
         {% else %}
-            <img src=" /static/img/no_image.png " alt="" class="default_image">
+        <img src=" /static/img/no_image.png " alt="" class="default_image">
         {% endif %}
 
     </div>
 
     <div title="Albums:" class="right_band_detail">
         {% for album in band.albums.all %}
-            <ul><a style="text-decoration: none" href="{{ album.get_url }}"><h4>{{ album }}</h4></a></ul>
+        <ul><a style="text-decoration: none" href="{{ album.get_url }}"><h4>{{ album }}</h4></a></ul>
         {% endfor %}
     </div>
 
