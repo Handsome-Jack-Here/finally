@@ -1,0 +1,134 @@
+.wrap {
+  background: #1c2128;
+  height: 100%;
+  width: 100%;
+  line-height: 3px;
+  margin: 0;
+
+}
+
+.h1_header {
+  padding: 40px 40px 40px 40px;
+  color: #adbac7;
+}
+
+header {
+  height: 140px;
+  background: #2d333b;
+  font-family: Ubuntu;
+  margin: 20px 0px 20px;
+  padding: 30px 30px 30px 30px;
+
+}
+
+.content {
+  background: #22272e;
+  width: 74%;
+  padding: 20px 20px 20px 20px;
+  height: 800px;
+  float: left;
+  clear: both;
+}
+
+.left {
+  border: 1px solid white;
+  float: left;
+  padding: 10px 40px 10px 10px;
+  background: #2d333b;
+  border-color: f6ebdf;
+}
+
+.right {
+  background: #fcf9ec;
+  float: right;
+  height: 90%;
+
+  padding: 30px 30px 30px 30px;
+  width: 300px;
+}
+
+.ul_list {
+  font-family: Ubuntu;
+  font-size: large;
+  color: #f6ebdf;
+}
+
+.ul_aside {
+  font-family: Ubuntu;
+  font-size: large;
+  color: #f6ebdf;
+  clear: both;
+}
+
+aside {
+  background: #2d333b;
+  padding: 10px 40px 10px 10px;
+  width: 18%;
+  height: 100%;
+  float: right;
+}
+
+.footer {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 10px 10px 10px;
+  height: 130px;
+  background: #2d333b;
+  clear: both;
+}
+
+
+.nav_bar {
+  padding: 10px 0px 40px 40px;
+}
+
+.navbar_link {
+  color: #f6ebdf;
+
+}
+
+.band_content {
+  width: 100%;
+  height: 900px;
+  margin: 50px 0px 50px 0px;
+}
+
+.left_band_detail {
+  width: 63%;
+  height: 800px;
+  padding: 20px  20px 20px 20px;
+  margin: 40px 40px 40px 40px ;
+  float: left;
+  background: #ffebcd;
+  color: black;
+
+}
+
+.right_band_detail {
+  width: 28%;
+  height: 800px;
+  padding: 20px 0px 20px 0px;
+  margin: 40px 40px 40px 40px ;
+  float: right;
+  background: #b1a4a2;
+  clear: bottom;
+  font-family: Ubuntu
+
+}
+
+.band_image {
+  margin: 200px 20px 10px 50px ;
+  padding: 0px 0px 10px 0px;
+  float: right;
+  height: 30%;
+}
+
+.default_image {
+  margin: 200px 20px 10px 50px ;
+  padding: 0px 0px 10px 0px;
+  float: right;
+  height: 30%;
+}
+
+.band_description {
+  line-height: 20px;
+}
